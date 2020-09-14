@@ -32,7 +32,7 @@ for f in listIMG :
     ## Read 16bits images (and get info)
     TIFF = external.tifffile.TiffFile(f)
     IMG = TIFF.asarray()
-    img_info = TIFF.info()   # IJ.runMacro('getImageInfo()'); A = MIJ.getLog
+    img_info = TIFF.info()   # IJ.runMacro('getImageInfo()'); A = MIJ.getLog; Need to know : Real acquisition time !!
     
     # Rearrangment of image shape (if necessary)
     IMG = np.rollaxis(IMG, np.where(np.array(IMG.shape) == NB_channel)[-1], 1)
